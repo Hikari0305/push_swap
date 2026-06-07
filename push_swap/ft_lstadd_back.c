@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyoshida <hikari.y.0305@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/30 13:57:26 by hyoshida          #+#    #+#             */
-/*   Updated: 2026/05/30 14:26:29 by hyoshida         ###   ########.fr       */
+/*   Created: 2026/05/17 15:16:14 by hyoshida          #+#    #+#             */
+/*   Updated: 2026/05/24 11:44:16 by hyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "push_swap.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-int	ft_isdigit(int c);
-
-typedef struct  s_stack
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    int				value;
-    struct s_stack	*next;
-}	t_stack;
+	t_list	*last;
 
-#endif
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	last = ft_lstlast(*lst);
+	last -> next = new;
+}

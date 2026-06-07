@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyoshida <hikari.y.0305@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/30 13:57:26 by hyoshida          #+#    #+#             */
-/*   Updated: 2026/05/30 14:26:29 by hyoshida         ###   ########.fr       */
+/*   Created: 2026/05/17 15:18:00 by hyoshida          #+#    #+#             */
+/*   Updated: 2026/05/24 13:12:11 by hyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "push_swap.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-int	ft_isdigit(int c);
-
-typedef struct  s_stack
+t_list	*ft_lstnew(void *content)
 {
-    int				value;
-    struct s_stack	*next;
-}	t_stack;
+	t_list	*new;
 
-#endif
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new -> content = content;
+	new -> next = NULL;
+	return (new);
+}

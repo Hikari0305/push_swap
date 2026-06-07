@@ -2,7 +2,7 @@ NAME        = push_swap
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
 
-SRCS        = main.c ft_isdigit.c
+SRCS        = main.c ft_isdigit.c ft_lstnew.c ft_lstadd_back.c
 OBJS        = $(SRCS:.c=.o)
 
 all: $(NAME)
